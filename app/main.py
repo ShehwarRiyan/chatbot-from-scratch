@@ -11,7 +11,7 @@ class ChatBot:
         self.conversation = None
         self.history = None
         
-        df = pd.read_csv("data/final.csv", sep=";")
+        df = pd.read_csv("data/augmented.csv", sep=";")
         if "model" not in st.session_state:
           st.session_state.model = QuestionAnsweringModel(df)
 
