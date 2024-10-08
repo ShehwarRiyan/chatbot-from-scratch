@@ -4,14 +4,17 @@ import streamlit as st
 from htmlTemplates import css, bot_template, user_template
 from generate import QuestionAnsweringModel
 import pandas as pd
-
+import os 
 
 class ChatBot:
     def __init__(self):
         self.conversation = None
         self.history = None
-        
-        df = pd.read_csv("data/augmented.csv", sep=";")
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        data_path = os.path.join(current_dir1, "data", "final.csv")
+
+        df = pd.read_csv("/content/chatbot-from-scratch/data/final.csv", sep=";") 
+        #df = pd.read_csv("data/augmented.csv", sep=";")
         if "model" not in st.session_state:
           st.session_state.model = QuestionAnsweringModel(df)
 
