@@ -13,7 +13,8 @@ class ChatBot:
         current_dir = os.path.dirname(os.path.abspath(__file__))
         data_path = os.path.join(current_dir1, "data", "final.csv")
 
-        df = pd.read_csv("/content/chatbot-from-scratch/data/final.csv", sep=";") 
+        df1 = pd.read_csv("/content/chatbot-from-scratch/data/final.csv", sep=";") 
+        df1
         #df = pd.read_csv("data/augmented.csv", sep=";")
         if "model" not in st.session_state:
           st.session_state.model = QuestionAnsweringModel(df)
